@@ -1,0 +1,111 @@
+
+
+Microchip Technology PIC Macro Assembler V1.35 build -356382666 
+                                                                                                           Mon Mar 11 18:48:59 2019
+
+
+     1                           
+     2                           	; Microchip MPLAB XC8 C Compiler V1.35
+     3                           	; Copyright (C) 1984-2015 HI-TECH Software
+     4                           
+     5                           	; Auto-generated runtime startup code for final link stage.
+     6                           
+     7                           	;
+     8                           	; Compiler options:
+     9                           	;
+    10                           	; --output=inhx32 \
+    11                           	; --outdir=D:\Shirish\Collage_Projects\2018_19\1053_hand_gesture_to_voice\code\output \
+    12                           	; --chip=16f877a \
+    13                           	; D:\Shirish\Collage_Projects\2018_19\1053_hand_gesture_to_voice\code\main.c
+    14                           	;
+    15                           
+    16                           
+    17                           	processor	16F877A
+    18                           
+    19                           	global	_main,start,reset_vec
+    20                           	fnroot	_main
+    21                           	psect	config,class=CONFIG,delta=2,noexec
+    22                           	psect	idloc,class=IDLOC,delta=2,noexec
+    23                           	psect	code,class=CODE,delta=2
+    24                           	psect	powerup,class=CODE,delta=2
+    25                           	psect	reset_vec,class=CODE,delta=2
+    26                           	psect	maintext,class=CODE,delta=2
+    27  0000                     	Z	set	2
+    28  0002                     	PCL	set	2
+    29  0002                     	INDF	set	0
+    30  0000                     
+    31                           	STATUS	equ	3
+    32  0003                     	PCLATH	equ	0Ah
+    33  000A                     
+    34                           	psect	eeprom_data,class=EEDATA,delta=2,space=3,noexec
+    35                           	psect	intentry,class=CODE,delta=2
+    36                           	psect	functab,class=CODE,delta=2
+    37                           	global	intlevel0,intlevel1,intlevel2, intlevel3, intlevel4, intlevel5
+    38                           intlevel0:
+    39  0000                     intlevel1:
+    40  0000                     intlevel2:
+    41  0000                     intlevel3:
+    42  0000                     intlevel4:
+    43  0000                     intlevel5:
+    44  0000                     	psect	init,class=CODE,delta=2
+    45                           	psect	cinit,class=CODE,delta=2
+    46                           	psect	text,class=CODE,delta=2
+    47                           	psect	end_init,class=CODE,delta=2
+    48                           	psect	clrtext,class=CODE,delta=2
+    49                           	FSR	set	4
+    50  0004                     	psect	strings,class=CODE,delta=2,reloc=256
+    51                           
+    52                           	global stacklo, stackhi
+    53                           	stacklo	equ	0
+    54  0000                     	stackhi	equ	0
+    55  0000                     
+    56                           
+    57                           	psect	stack,class=STACK,space=2,noexec
+    58                           	global ___sp,___int_sp
+    59                           	___sp:
+    60  0000                     	___int_sp:
+    61  0000                     	psect	reset_vec
+    62                           reset_vec:
+    63  0000                     	; No powerup routine
+    64                           	; No interrupt routine
+    65                           
+    66                           
+    67                           	psect	init
+    68                           start
+    69  0000                     	psect	end_init
+    70                           	global start_initialization
+    71                           	ljmp start_initialization	;jump to C runtime clear & initialization
+    72  0000  120A  118A  2FE6   
+    73                           ; Config register CONFIG @ 0x2007
+    74                           ;	Watchdog Timer Enable bit
+    75                           ;	WDTE = OFF, WDT disabled
+    76                           ;	Power-up Timer Enable bit
+    77                           ;	PWRTE = OFF, PWRT disabled
+    78                           ;	Flash Program Memory Code Protection bit
+    79                           ;	CP = ON, All program memory code-protected
+    80                           ;	Brown-out Reset Enable bit
+    81                           ;	BOREN = OFF, BOR disabled
+    82                           ;	In-Circuit Debugger Mode bit
+    83                           ;	DEBUG = OFF, In-Circuit Debugger disabled, RB6 and RB7 are general purpose I/O pins
+    84                           ;	Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit
+    85                           ;	LVP = OFF, RB3 is digital I/O, HV on MCLR must be used for programming
+    86                           ;	Data EEPROM Memory Code Protection bit
+    87                           ;	CPD = ON, Data EEPROM code-protected
+    88                           ;	Flash Program Memory Write Enable bits
+    89                           ;	WRT = OFF, Write protection off; all program memory may be written to by EECON control
+    90                           ;	Oscillator Selection bits
+    91                           ;	FOSC = HS, HS oscillator
+    92                           
+    93                           	psect	config
+    94                           		org 0x0
+    95  2007                     		dw 0xDE3A
+    96  2007  DE3A               
+
+
+Microchip Technology PIC Macro Assembler V1.35 build -356382666 
+Symbol Table                                                                                               Mon Mar 11 18:48:59 2019
+
+               ___sp 0000                 _main 0D97                 start 0000               stackhi 0000  
+             stacklo 0000  start_initialization 07E6             ___int_sp 0000             intlevel0 0000  
+           intlevel1 0000             intlevel2 0000             intlevel3 0000             intlevel4 0000  
+           intlevel5 0000             reset_vec 0000  
